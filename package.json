@@ -1,0 +1,21 @@
+{
+  "name": "ethereum-signer",
+  "version": "1.0.0",
+  "description": "Script to sign messages using ethers.js",
+  "main": "sign.js",
+  "type": "module",
+  "scripts": {
+    "start": "node sign.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polkadot/api": "^10.11.2",
+    "@polkadot/keyring": "^12.6.2",
+    "@polkadot/util": "^12.6.2",
+    "@polkadot/util-crypto": "^12.6.2",
+    "ethers": "^6.11.0",
+    "keccak256": "^1.0.6"
+  }
+}
