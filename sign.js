@@ -100,6 +100,15 @@ async function signSubstrateStyle() {
         const wallet = new ethers.Wallet(privateKey);
         console.log('Ethereum address:', wallet.address);
 
+        // Check that the wallet address has a claim
+        const claim = await api.query.airdrop.claims(wallet.address);
+        console.log('Claim for', wallet.address, ':', claim.toString());
+
+        if (claim.isEmpty) {
+            console.error('Wallet address does not have a claim');
+            return;
+        }
+
         // Create the account number and get its SCALE encoding
         const accountNumber = 42;
         const accountBytes = numberToLEBytes(accountNumber);
